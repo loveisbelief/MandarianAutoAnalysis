@@ -76,7 +76,8 @@ int CWordTagSet::GetFreqs(CString w, CObArray& a)
 	// 设置新的筛选条件
 	Requery( );	// 重新查询
 	if(GetRecordCount( )==0) return 0; // 没有找到该词的任何标记
-  for(int i=0; i<a.GetSize( ); i++) if(a[i]) delete a[i]; 
+	int i;
+  for(i=0; i<a.GetSize( ); i++) if(a[i]) delete a[i]; 
 	a.RemoveAll( );  i=0; 		// 清除数组中原有内容
 	CTagFreq *pt;
 	while(!IsEOF( )) {	// 记录没有取完时

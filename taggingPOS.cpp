@@ -50,7 +50,8 @@ double CCoMatrix::GetWordProb(double wtFreq, uchar tag)
 
 void CCoMatrix::Create(CStdioFile& tagFile)
 {	// 参数：存放标记集的文本文件
-  if(Ready( )) Clean; // 清除原有标记集
+  if(Ready( ))
+	  Clean(); // 清除原有标记集
   CString line;
   pTags=new CStringArray; // 存放标记集的字符串数组
   pTags->Add("$%"); // 添加虚设标记
@@ -207,7 +208,8 @@ void CSpan::GetFrom(CString& s)	// 从字符串获取若干个词
 {
   CObArray a;
   s.TrimLeft( ); s.TrimRight( );
-  for(uchar i=1; i<20 && !s.IsEmpty( ); i++) { // 从第1个词开始
+  uchar i = 1;
+  for(; i<20 && !s.IsEmpty( ); i++) { // 从第1个词开始
 		Words[i]=s.SpanExcluding(" ");  // 取词
 		s=s.Mid(Words[i].GetLength( ));
 		s.TrimLeft( );
@@ -221,8 +223,9 @@ void CSpan::GetFrom(CString& s)	// 从字符串获取若干个词
 			  Freqs[i][j]=p->Freq;
 		  }
 */
-		uchar n=0;
-		for(uchar j=0; j<10 && j<a.GetSize(); j++) {
+		uchar n = 0;
+		uchar j = 0;
+		for(; j<10 && j<a.GetSize(); j++) {
 			CTagFreq *p=(CTagFreq *)a.GetAt(j);
 			uchar tmp=coMatrix.GetIndexOf(p->Tag);
 			if(tmp>0) { // 先检查是否合法标记
@@ -242,7 +245,8 @@ void CSpan::GetFrom(CString& s)	// 从字符串获取若干个词
 	
 void CSpan::GuessTag(char i)	// 猜测第i个词的词性标记
 {
-	for(uchar k=0; k<coMatrix.pOpenTags->GetSize( ); k++) {
+	uchar k = 0;
+	for(; k<coMatrix.pOpenTags->GetSize( ); k++) {
 		Tags[i][k]=coMatrix.GetIndexOf(coMatrix.pOpenTags->GetAt(k));
 		Freqs[i][k]=1;
 	}

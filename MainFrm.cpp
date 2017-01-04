@@ -1220,6 +1220,7 @@ void CMainFrame::OnParsingPcfg()
   }
   
   CStdioFile newRule(rf); // 以下输出新的规则文件
+  int i;
   for(i=0; i<rules.GetSize( ); i++) {
     		CProbRule *r=(CProbRule *)rules[i];
     		msg.Format("%s --> %s %s %8.6f; 期望次数：%8.6f\n", 
