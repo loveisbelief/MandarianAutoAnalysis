@@ -1,0 +1,44 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: 现代汉语自动分析 - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\lenovo\AppData\Local\Temp\RSPEB4D.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp".\Release/现代汉语自动分析.pch" /Yu"stdafx.h" /Fo".\Release/" /Fd".\Release/" /FD /c 
+"E:\现代汉语自动分析程序（陈小荷）\taggingPOS.cpp"
+]
+Creating command line "cl.exe @C:\Users\lenovo\AppData\Local\Temp\RSPEB4D.tmp" 
+Creating temporary file "C:\Users\lenovo\AppData\Local\Temp\RSPEB4E.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:".\Release/现代汉语自动分析.pdb" /machine:I386 /out:".\Release/现代汉语自动分析.exe" 
+".\Release\ChildFrm.obj"
+".\Release\MainFrm.obj"
+".\Release\myResourceClass.obj"
+".\Release\parsing.obj"
+".\Release\retrieval.obj"
+".\Release\StdAfx.obj"
+".\Release\taggingPOS.obj"
+".\Release\WordTagSet.obj"
+".\Release\现代汉语自动分析.obj"
+".\Release\现代汉语自动分析Doc.obj"
+".\Release\现代汉语自动分析View.obj"
+".\Release\现代汉语自动分析.res"
+]
+Creating command line "link.exe @C:\Users\lenovo\AppData\Local\Temp\RSPEB4E.tmp"
+<h3>Output Window</h3>
+Compiling...
+taggingPOS.cpp
+E:\现代汉语自动分析程序（陈小荷）\taggingPOS.cpp(53) : warning C4551: function call missing argument list
+Linking...
+
+
+
+<h3>Results</h3>
+现代汉语自动分析.exe - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>
